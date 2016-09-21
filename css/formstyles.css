@@ -1,0 +1,44 @@
+form {
+    border : 1px solid #D3D3D3;
+    margin: 50px 75px;
+    height: 2000px;
+    width: 1050px;
+     } 
+ .title1 {
+    color: #696969;
+    font-style: normal;
+    font-family: Arial Regular;
+    font-size: 25pt;
+    padding : 30px;
+    border-bottom: 1px solid #D3D3D3; 
+    }
+ .group1{
+    padding:30px;
+        }
+#title2{
+     color: #696969;
+    font-style: normal;
+    font-family: Arial Regular;
+    font-size: 25pt;
+  
+    
+  }
+#text1{
+    padding:20px;
+    color: red;
+    float: right;
+    }
+#manditory{
+    color:red;
+
+}
+#title3{
+    padding:30px;
+    font: bold 20px arial, sans-serif;
+}
+
+.change_vehicle{
+    pading: 0px 0px 0px 30px;
+    
+}
+    
