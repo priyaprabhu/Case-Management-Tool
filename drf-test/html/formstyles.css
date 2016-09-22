@@ -1,0 +1,52 @@
+.drf-container h2{color:#0c7cba;font-weight:bold;}
+.form-container{border:1px solid #D3D3D3;margin: 30px 0;}
+.form-container h3{color:#696969; font-family :arial regular;}
+.form-close{color:#696969;}
+
+
+.mainForm {
+    border : 1px solid #D3D3D3;
+    margin: 50px 75px;
+    height: 2000px;
+    width: 80%;
+     } 
+.mainDiv{
+    padding: 30px;
+}
+ .title {
+    color: #696969;
+    font-style: normal;
+    font-family: Arial Regular;
+    font-size: 25pt;
+    padding:30px;
+    
+    border-bottom: 1px solid #D3D3D3; 
+    }
+ .group1{
+    padding:30px;
+        }
+#formSection{
+     color: #696969;
+    font-style: normal;
+    font-family: Arial Regular;
+    font-size: 25pt;
+  
+    
+  }
+#required{
+    padding:20px;
+    color: red;
+    float: right;
+    }
+#manditory{
+    color:red;
+
+}
+#label{
+    padding:30px;
+    font: bold 20px arial, sans-serif;
+}
+.change_vehicle{
+    padding:0px 30px;
+    width:70%;
+}
