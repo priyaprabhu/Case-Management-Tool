@@ -1,29 +1,20 @@
-.drf-container h2{color:#0c7cba;font-weight:bold;}
+.drf-container h1{color:#0c7cba;font-weight:bold;}
 .form-container{border:1px solid #D3D3D3;margin: 30px 0;}
-.form-container h3{color:#696969; font-family :arial regular;}
-.form-close{color:#696969;}
+.form-container h2{color:#696969; font-family :arial regular;padding: 10px 10px;}
+.form-close{color:#696969;padding-top: 10px;}
+.form-content{border-top:1px solid #D3D3D3;padding:10px 30px 30px 10px;}
 
-
-.mainDiv{
-    padding: 30px;
-}
-
- .group1{
-    padding:30px;
-        }
-#formSection{
-     color: #696969;
-    font-style: normal;
-    font-family: Arial Regular;
-    font-size: 25pt;
-  
-    
-  }
-#required{
+.form-content h3{color: #696969;font-family: arial regular;}
+.required{
     padding:20px;
     color: red;
     float: right;
     }
+.form-input-container{margin: 8px 0 20px;}
+.form-input-container p{font-size: 19px;font-family: arial regular;}
+.form-input-container ul li{float:left;list-style-type:none;margin: 38px 10px;}
+.form-input-container ul li span{font: normal 18px arial regular;}
+
 #manditory{
     color:red;
 
