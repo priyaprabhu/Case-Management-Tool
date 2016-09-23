@@ -24,3 +24,7 @@
     font: bold 20px arial, sans-serif;
 
 }
+select{
+	width: 93%;
+	height:33px;
+}
