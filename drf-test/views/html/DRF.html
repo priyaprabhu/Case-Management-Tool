@@ -4,51 +4,233 @@
         <title>Case Management</title>
         <meta http-equiv="X-UA_Compatible" content="IE-Edge">
         <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="../../libraries/angular.min.js" ></script>
-	
+  
         <script src="../../libraries/jquery.min.js" ></script>
-	
+  
         <script src="../../libraries/bootstrap.min.js"></script>
-	
+  
         <script src="../../js/script.js" ></script>
-	
+  
         <link rel="stylesheet" href="../../libraries/bootstrap.min.css" />
-	
+  
         <link rel="stylesheet" href="../../css/custom.css" />
 
         <link rel="stylesheet" type="text/css" href="../../css/formstyles.css" media="screen" />
     </head>
     <body>
-         <div class="mainDiv">
-        <div class="mainForm"> 
-            <div class="title">Diagnostic/Repair Assistance Request</div>
-            <form>
-            <div class="group1">
-                <span id="formSection">What vehicle are we helping diagnose?</span>
-                <span id="required">*Required Fields</span>
-            </div>
-            <div class="form-group">
-                    <label ><span id="label">Selected Vehicle </span><span id="manditory">*</span></label><br>
-                    <div class="change_vehicle">
-                        <select name="select_change vehicle" id="select_change vehicle" >
-                      
-                           <option value="Existing component">Existing component</option>
-                            <option value="Required">Required</option>
-                            <optgroup label="YMME selector">
-                            
-                                    <option label="required">required</option>
-                                    <option value="modal">modal</option>
-                                    <option value="based on already built component">based on already built component</option>
-                                </optgroup>
-                        </select>
-            </div>
-                
-            </div>
-                
-            </form>
-             </div>
+        <div class="container">
+     <div class="drf-container">
+     <h1>EBRS Request Form</h1> 
+     
+     <div class="col-sm-9 form-container">
+     <nav class="navbar">
+<div class="navbar-header">
+<h2>Diagnostic/Repair Assistance Request</h2>
+</div>
+<ul class="nav navbar-nav navbar-right rightNav">
+<li><a href="#"><span class="glyphicon glyphicon-remove form-close"></span></a></li>
+</ul>
+</nav>
+     <form>
+         <div class="row form-content" class="col-sm-6">
+    <div class="section1"> 
+    <div class="col-sm-6">
+    <h3>What vehicle are we helping diagnose?</h3>
+    </div><span class="text-right required">*Required Fields</span>
+    <div class="form-group">
+                   <div class="row">
+                    <div class="col-sm-12 form-input-container">
+                         <p >Selected Vehicle<span id="manditory">*</span></p>
+                             <input  class="form-control" type="text"/>
+                         </div>
+                    </div>
+          <div class="row">
+                    <div class="col-sm-12 form-input-container">
+                         <p>VIN</p>
+                    <input type="text"  class="form-control" >
+                         </div>
+                    </div>
+                <div class="row">
+                    <div class="col-sm-6 form-input-container"">
+                          <p>Transmission<span id="manditory">*</span></p>
+                                <select>
+                                  <option value="Select">-Select-</option>
+                                  
+                                </select>
+                         </div>
+                    <div class="col-sm-6 form-input-container"">
+                      <p>HVAC Type</p>
+                         <select>
+                                   <option value="Select">-Select-</option>
+                                  
+                                </select>       
+                   </div>
+                </div>
+        <div class="row">
+                    <div class="col-sm-8 form-input-container"">
+                          <p>Odameter<span id="manditory">*</span></p>
+                                <select>
+                                  <option value="1-25k">1-25k</option>
+                                  
+                                </select>
+                         </div>
+                         </div>
+                         <div class="row">
+                    		<div class="col-sm-4 form-input-container">  
+            				<ul><li><input type="radio"/><span>&nbsp;&nbsp;Miles</span></li>
+            				<li><input type="radio"/><span>&nbsp;&nbsp;Kilometers</span></li>
+            				</ul>
+            				</div>
+                   		</div>
         </div>
+        </div>
+      <div class="section2"> 
+    <div class="col-sm-10">
+    <h3>What can you tell us about the problems(s) with the Vehicle?</h3>
+    </div>
+    <div class="form-group">
+                   <div class="row">
+                    <div class="col-sm-12 form-input-container">
+                         <p>Which system is effected?<span id="manditory">*</span></p>
+                            <select>
+                                   <option value="Select">-Select-</option>
+                                  
+                                </select> 
+                         </div>
+                    </div>
+             
+                <div class="row">
+                    <div class="col-sm-12 form-input-container">
+                          <p>What are the Symptoms?<span id="manditory">*</span></p>
+                              <select>
+                                   <option value="Select">-Select-</option>
+                                  
+                                </select>
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class="col-sm-12 form-input-container">
+                          <p>What DTC(s) are Present?</p>
+                                <input  type="text" class="form-control">
+                                    
+                    </div>
+                </div>
+              <div class="row">
+                    <div class="col-sm-12 form-input-container">
+                          <p>How would you describe the issue (Including all observations and conditions)?<span id="manditory">*</span></p>
+                                <input  type="text" class="issue-text" >
+                                    
+                         </div>
+                    
+                </div>
+              <div class="row">
+                       <div class="col-sm-12 form-input-container">
+                        <p>What tests have you performed? What were the results?</p>
+                       </div>
+                       </div>
+                       <div class="row">
+                    <div class="col-sm-5 form-input-container">
+                       <p >Test</p>
+                             <input  class="form-control" type="text"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-5 form-input-container">
+                       <p >Result</p>
+                             <input  class="form-control" type="text"/>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-5 form-input-container">
+                        <input  class="form-control" type="text"/>
+                      </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-5 form-input-container">
+                      <input  class="form-control" type="text"/>
+                      <div class="row"><button class="glyphicon glyphicon-plus-sign form-plus"></button></div>
+                    </div>
+                    </div>
+          </div>
+          </div>
+         <div class="section3">
+         		<div class="col-sm-10">
+                <h3>What is your Contact Information?</h3>
+                 </div>
+         		<div class="form-group">
+							<div class="col-sm-12 form-input-container">
+                                    <p id=>Shop contact information</p>
+                             </div>
+                                 <div class="row">
+                                        <div class="col-sm-6 form-input-container">
+                                          <p>Shop, Site, or Company Name<span id="manditory">*</span></p>
+
+                                           <input  type="text" class="form-control" />
+                                           </div>
+                                   </div>
+                                    <div class="row">  
+                                        <div class="col-sm-6 form-input-container">
+                                          <p>Shop phone number<span id="manditory">*</span></p>
+                                           <input  type="text" class="form-control" />
+                              
+                            			</div>  
+                           			 </div>            
+                                     <div class="row">
+                                        <div class="col-sm-12 form-input-container">
+                                       
+                                             <p>Technician’s Contact Information</p>
+                                         </div>
+                                        </div>
+                                        <div class="row">
+                                        <div  class="col-sm-6 form-input-container">
+                                          <p>Contact Name<span id="manditory">*</span></p>
+                                           <input  type="text" class="form-control" />
+                                        </div>
+                                        </div>
+                                        <div class="row">
+                                        <div class="col-sm-6 form-input-container">
+                                          <p>Primary Phone Number<span id="manditory">*</span></p>
+                                           <input  type="text" class="form-control" />
+                                        </div>
+                                         </div>   
+                          
+                                       <div class="row">
+                                          <div class="col-sm-6 form-input-container">
+                                               <p >Email</p>
+                                                   <input  class="form-control" type="text"/>
+                                               </div>
+                                        </div>
+                                        <div class="row">
+                                        <div class="col-sm-6 form-input-container">
+                                               <p >Alternative Phone Number</p>
+                                                   <input  class="form-control" type="text"/>
+                                        </div>       
+                          				</div>
+                         
+                                       <div class="row">
+                                          <div class="col-sm-6 form-input-container">
+                                               <p >Time Zone</p>
+                                                   <input  class="form-control" type="text"/>
+                                               </div>
+                                        </div>
+                                        <div class="row">
+                                        <div class="col-sm-6 form-input-container">
+                                               <p >Alternative Phone Number</p>
+                                                   <input  class="form-control" type="text"/>
+                                        </div>       
+                          				</div>
+                            </div>
+            
+      
+              </div>
+     </div>
+    
+    </form> 
+    
+        </div>
+        </div>
+      </div>     
     </body>
 </html>
-    
