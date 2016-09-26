@@ -1,8 +1,9 @@
+.form-control,.btn {border-radius : 0px;}
 .drf-container h1{color:#0c7cba;font-weight:bold;}
-.form-container{border:1px solid #D3D3D3;margin: 30px 0 0 0;}
+.form-container{border:1px solid #D3D3D3;margin: 30px 0;}
 .form-container h2{color:#696969; font-family :arial regular;padding: 10px 10px;}
 .form-close{color:#696969;padding-top: 10px;}
-.form-content{border-top:1px solid #D3D3D3;padding:10px 30px 30px 10px;}
+.form-content{border-top:1px solid #D3D3D3;padding:10px 30px 10px 10px;}
 
 .form-content h3{color: #696969;font-family: arial regular;}
 .required{
@@ -11,16 +12,19 @@
     float: right;
     }
 .form-input-container{margin: 8px 0 20px;}
-.form-input-container p{font-size: 19px;font-family: arial regular;}
+.split_input{margin-bottom:10px;}
+.form-input-container p,.split_input p{font-size: 19px;font-family: arial regular;}
 .form-input-container ul li{float:left;list-style-type:none;margin: 38px 10px;}
 .form-input-container ul li span{font: normal 18px arial regular;}
 .bottom-row{margin-bottom: -50px;}
-.issue-text {width: 100%; height: 250px;}
-.form-input-container-section2 p{font-size: 19px;font-family: arial regular;}
-.form-input-container-section2{ margin-top: 10px;}
-.form-plus{float:right; margin: -31px -55px 0px 0px;}
-.section3{margin-bottom: 20px;}
-.form-footer{border-top:0; margin: 0 0 30px 0; padding: 20px; text-align: right;}
+.addIcon{color:#fff;font-size:12px;}
+.addIcon:hover{color:#fff;text-decoration:none;}
+.footer-container{border-top:1px solid #D3D3D3;padding: 20px;}
+.footer-container button{float:right;margin:0 10px;}
+.section3 .section3_container .font, .font{color: #6E6E6E;font-size: 18px;font-family: arial regular;}
+.section3_container{margin-bottom:10px;}
+span a.plus-Icon{width:20px;height:20px;background:#000;padding: 4px;margin-top: 7px;border-radius: 10px;}
+
 #manditory{
     color:red;
 
@@ -30,12 +34,3 @@
     font: bold 20px arial, sans-serif;
 
 }
-select{
-	width: 100%;
-	height:33px;
-}
-
-input[type] {
-	border-radius : 0px;
-}
-
