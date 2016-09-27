@@ -1,0 +1,202 @@
+[
+  {
+    "troubleSymptomId": 1,
+    "valueLbl": "Accessories, Optional Equipments and Body",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/1"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 2,
+    "valueLbl": "Body & Frame",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/2"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 3,
+    "valueLbl": "Brakes, Traction & Stability Control",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/3"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 19,
+    "valueLbl": "Collision Repair",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/19"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 4,
+    "valueLbl": "Cruise Control",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/4"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 5,
+    "valueLbl": "Engine, Cooling & Exhaust",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/5"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 6,
+    "valueLbl": "Heating, Air Conditionning & Climate Control",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/6"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 7,
+    "valueLbl": "Hybrid/Electric Drive Systems",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/7"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 8,
+    "valueLbl": "Information Bus (Network) & Programming flash",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/8"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 9,
+    "valueLbl": "Instrument Panel, Gauges & Warning Indicator",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/9"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 10,
+    "valueLbl": "Lighting and Horns",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/10"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 11,
+    "valueLbl": "Maintenance & Reset Procedure",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/11"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 20,
+    "valueLbl": "Other System",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/20"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 12,
+    "valueLbl": "Powertrain Management",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/12"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 13,
+    "valueLbl": "Restraints and Safety Systems",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/13"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 14,
+    "valueLbl": "Starting, Charging & Battery",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/14"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 15,
+    "valueLbl": "Steering and Suspension",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/15"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 16,
+    "valueLbl": "Transmission and Drivetrain",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/16"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 17,
+    "valueLbl": "Window & Glass",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/17"
+      }
+    }
+  },
+  {
+    "troubleSymptomId": 18,
+    "valueLbl": "Wiper and Washer Systems",
+    "troubleSymptomClassRefCd": "SYS",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/systems/18"
+      }
+    }
+  }
+]

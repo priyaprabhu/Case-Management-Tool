@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+    <html lang="en-us" ng-app="allData">
+    <head>
+        <title>Case Management</title>
+        <meta http-equiv="X-UA_Compatible" content="IE-Edge">
+        <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="../../libraries/angular.min.js" ></script>
+		<script src="../../libraries/angular-route.js" type="text/javascript"></script>
+	
+        <script src="../../libraries/jquery.min.js" ></script>
+	
+        <script src="../../libraries/bootstrap.min.js"></script>
+	
+        <script src="../../js/script.js" ></script>
+		<script src="../../js/app.js" type="text/javascript"></script>
+		<script src="../../js/formController.js" type="text/javascript"></script>	
+        <link rel="stylesheet" href="../../libraries/bootstrap.min.css" />
+	
+        <link rel="stylesheet" href="../../css/custom.css" />
+
+        <link rel="stylesheet" type="text/css" href="../../css/formstyles.css" media="screen" />
+    </head>
+    <body>
+        <div class="container">
+		 <div class="drf-container">
+		 <h1>EBRS Request Form</h1> 
+		 
+		 <div class="col-sm-9 form-container" ng-controller="formcontroller">
+		 <nav class="navbar">
+<div class="navbar-header">
+<h2>Diagnostic/Repair Assistance Request</h2>
+</div>
+<ul class="nav navbar-nav navbar-right rightNav">
+<li><a href="#"><span class="glyphicon glyphicon-remove form-close"></span></a></li>
+</ul>
+</nav>
+		 <form>
+         <div class="row form-content" class="col-sm-6" >
+        <div class="section1" ng-controller="formcontroller"> 
+		<div class="col-sm-6">
+		<h3>What vehicle are we helping diagnose?</h3>
+		</div><span class="text-right required">*Required Fields</span>
+		<div class="form-group">
+                   <div class="row">
+                    <div class="col-sm-12 form-input-container">
+                         <p >Selected Vehicle<span id="manditory">*</span></p>
+                             <input  class="form-control" type="text" ng-model="vehicle"/>
+
+                         </div>
+                    </div>
+					<div class="row">
+                    <div class="col-sm-12 form-input-container">
+                         <p>VIN</p>
+                    <input type="text"  class="form-control" >
+                         </div>
+                    </div>
+                <div class="row">
+                    <div class="col-sm-6 form-input-container">
+                          <p>Transmission<span id="manditory">*</span></p>
+                                <select class="form-control"></select>
+                                    
+                         </div>
+                    <div class="col-sm-6 form-input-container">
+                      <p>HVAC Type</p>
+                            <select  class="form-control"><select>
+                                    
+                   </div>
+                </div>
+				<div class="row bottom-row">
+                    <div class="col-sm-8 form-input-container">
+                          <p>Odameter<span id="manditory">*</span></p>
+                                <select class="form-control">
+                                    <option value="1-25k">1-25k</option>
+                                 </select>
+                         </div>
+                    <div class="col-sm-4 form-input-container">
+					
+                      <div class="row">
+					  <ul><li><input type="radio" ng-model="distance" value="{{distanceValue[0]}}"/><span>&nbsp;&nbsp;{{distanceValue[0]}}</span></li>
+					  <li><input type="radio" ng-model="distance" value="{{distanceValue[1]}}" /><span>&nbsp;&nbsp;{{distanceValue[1]}}</span></li>
+					  </ul>
+					  </div>
+                   </div>
+                </div>
+                </div>
+              </div><!-- End section 1-->
+			  <div class="section2"> 
+		<div class="col-sm-10">
+		<h3>What can you tell us about the problems(s) with the Vehicle?</h3>
+		</div>
+		<div class="form-group">
+                   <div class="row">
+                    <div class="col-sm-12 form-input-container">
+                         <p>Which system is effected?<span id="manditory">*</span></p>
+                             <select  class="form-control" ng-disabled="{{inputdisabled}}">
+                                    <option value="Select">-Select-</option>
+                                 </select>
+                         </div>
+                    </div>
+					<div class="row">
+                    <div class="col-sm-12 form-input-container">
+                         <p>What are the symptoms</p>
+                    <select class="form-control" ng-disabled="{{inputdisabled}}" ></select>
+                         </div>
+                    </div>
+                <div class="row">
+                    <div class="col-sm-12 form-input-container">
+                          <p>What DTC(s) are Present</p>
+                                <input  type="text" class="form-control" ng-disabled="{{inputdisabled}}">
+                                    
+                         </div>
+                                    </div>
+				<div class="row">
+                    <div class="col-sm-12 form-input-container">
+                          <p>How would you describe the issue (Including all observations and conditions)?<span id="manditory">*</span></p>
+                                <textarea  type="text" class="form-control" ng-disabled="{{inputdisabled}}" rows="10"></textarea>
+                              </div>
+                    
+                </div>
+				<div class="row">
+                              <div class="col-sm-12 form-input-container">
+                                 <p>What tests have you performed? What were the results?</p>
+                              </div>
+                           </div>
+				
+				<div class="row split_input">
+                              <div class="col-sm-5"><p >Test</p>
+                              <input  class="form-control" type="text" ng-disabled="{{inputdisabled}}"/>
+							  </div>
+							  <div class="col-sm-5"><p >Result</p>
+                              <input  class="form-control" type="text" ng-disabled="{{inputdisabled}}"/>
+							  </div>
+                           </div>
+				
+				<div class="row split_input">
+                              <div class="col-sm-5">
+                              <input  class="form-control" type="text" ng-disabled="{{inputdisabled}}"/>
+							  </div>
+							  <div class="col-sm-5">
+                              <input  class="form-control" type="text" ng-disabled="{{inputdisabled}}"/>
+							  </div>
+							  <div class="col-sm-2"><span><a href="#" class="glyphicon glyphicon-plus plus-Icon addIcon"></a></span></div>
+                           </div>
+				</div>
+            </div><!-- End section 2-->
+			  <div class="section3">
+                        <div class="col-sm-10">
+                           <h3>What is your Contact Information?</h3>
+                        </div>
+                        <div class="form-group">
+                        <div class="row">
+                          <div class="col-sm-12 form-input-container">
+                              <p> Shop contact information</p>
+                           </div>
+                        </div>
+                           
+                           <div class="row">
+                              <div class="col-sm-6 section3_container">
+                                 <p class="font">Shop, Site, or Company Name<span id="manditory">*</span></p>
+                                 <input  type="text" class="form-control" ng-disabled="{{inputdisabled}}" />
+                              </div>
+                              <div class="col-sm-6 section3_container">
+                                 <p class="font">Shop phone number<span id="manditory">*</span></p>
+                                 <input  type="text" class="form-control" ng-disabled="{{inputdisabled}}" />
+                              </div>
+                           </div>
+                           <div class="row form-input-container">
+                                 <p>Technician’s Contact Information</p>
+                           </div>
+                           
+                           <div class="row">
+                             <div  class="col-sm-6 section3_container">
+                                <p class="font">Contact Name<span id="manditory">*</span></p>
+                                <input  type="text" class="form-control" ng-disabled="{{inputdisabled}}" />
+                             </div>
+                              <div class="col-sm-6 section3_container">
+                                 <p class="font">Primary Phone Number<span id="manditory">*</span></p>
+                                 <input  type="number" class="form-control" ng-disabled="{{inputdisabled}}" />
+                              </div>
+                           </div>
+                           <div class="row">
+                             <div class="col-sm-6 form-input-container">
+                                <p class="font">Email</p>
+                                <input  class="form-control" type="email" ng-disabled="{{inputdisabled}}" />
+                             </div>
+                             <div class="col-sm-6 form-input-container">
+                                <p class="font">Alternative Phone Number</p>
+                                <input  class="form-control" type="number" ng-disabled="{{inputdisabled}}" />
+                             </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-sm-6 form-input-container">
+                              <p class="font">Time Zone</p>
+                              <select  class="form-control" ng-disabled="{{inputdisabled}}"></select>
+                           </div>
+                           <div class="col-sm-6 form-input-container">
+                              <p class="font">Preffered Language</p>
+                              <select  class="form-control" ng-disabled="{{inputdisabled}}"></select>
+                           </div>
+                          </div>
+                          
+                           
+                     </div>
+                  </div><!-- End section 3-->
+				 
+			  
+		 </div>
+		  <div class="row footer-container">
+				<button class="btn btn-primary" ng-disabled="{{inputdisabled}}">submit</button> 
+				<button class="btn btn-default ">Back</button> 
+				
+          </div>
+		</form> 
+        </div>
+        </div>
+		
+      </div>     
+
+    </body>
+</html>

@@ -1,0 +1,65 @@
+[
+  {
+    "odometerRangeRefCd": "01_1_25K",
+    "odometerRangeRefLbl": "1-25k",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/catalog/odometerranges"
+      }
+    }
+  },
+  {
+    "odometerRangeRefCd": "02_25_50K",
+    "odometerRangeRefLbl": "25k-50k",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/catalog/odometerranges"
+      }
+    }
+  },
+  {
+    "odometerRangeRefCd": "03_50K_75K",
+    "odometerRangeRefLbl": "50k-75k",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/catalog/odometerranges"
+      }
+    }
+  },
+  {
+    "odometerRangeRefCd": "04_75K_100K",
+    "odometerRangeRefLbl": "75k-100k",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/catalog/odometerranges"
+      }
+    }
+  },
+  {
+    "odometerRangeRefCd": "05_100K_125K",
+    "odometerRangeRefLbl": "100k-125k",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/catalog/odometerranges"
+      }
+    }
+  },
+  {
+    "odometerRangeRefCd": "06_125K_150K",
+    "odometerRangeRefLbl": "125k-150k",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/catalog/odometerranges"
+      }
+    }
+  },
+  {
+    "odometerRangeRefCd": "07_GT150K",
+    "odometerRangeRefLbl": "150k+",
+    "_links": {
+      "self": {
+        "href": "https://172.27.10.73:8443/ebrs/catalog/odometerranges"
+      }
+    }
+  }
+]

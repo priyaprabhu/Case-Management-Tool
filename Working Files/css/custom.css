@@ -1,0 +1,26 @@
+.navigationBar{padding-bottom:0;}
+.topNavigation{height:63px;background:#1a4982;margin-bottom:1px;}
+.topNavigation h2{padding:0 30px;color:#fff;margin-top:14px}
+.topNavigation h3{margin-top:18px;padding:0 30px;color:#fff;}
+.leftpanel{    border-right: 1px solid #ccc;margin-top: -1px;padding-top: 20px;}
+.leftpanel p{padding:0 15px;}
+.rightpanel{background:#f3f3f3;margin-top: -4px;height: 100%;}
+.content{height:840px;border: 1px solid #ccc;border-top: none;}
+.title{font:normal bold 22px Arial;color:#003366;padding-left:10px;}
+ul.subTitle{margin-bottom:30px;}
+ul.subTitle li {font:normal 18px Arial; color:#0c7cba;list-style-type:none;margin: 13px 13px 13px 40px;padding:3px 10px;}
+ul.subTitle li.active {background: #003366;color: #fff;width: 88%;}
+.bottom-grid{width:100%;max-width:none;padding:40% 0 0 0;}
+.button-col{background:#f3f3f3;border-top:1px solid #ccc;}
+.button{margin: 6% 30%;}
+.custom-right-icon{color:#333;font-size: 14px;margin-left: -18px;}
+.phoneicon{color:#0c7cba;margin-right: 10px;}
+.rightNav{margin-right:2px;}
+.rightNav li a{color:#fff;margin: 8px;}
+.form-container{position:absolute;}
+.form-container + .glyphicon {right: 0;padding: 8px 0px;position: absolute;}
+.centerContent{margin-top:20px; height: 96%;}
+
+@media screen and (max-width:1199px){
+	.bottom-grid{padding:22% 0 0 0;}
+}
