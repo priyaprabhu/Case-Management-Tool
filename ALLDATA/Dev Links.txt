@@ -1,0 +1,11 @@
+EBRS APIs: https://172.27.10.76/display/BIZ/EBRS+APIs
+
+Layer 7 API gateway: https://172.27.10.76/display/BIZ/Layer+7+API+Gateway
+
+Single Sign On Services: https://172.27.10.76/display/BIZ/Single+Sign+On+Web+Services 
+12:56 PM
+
+RDC IP: 172.25.22.193
+
+software download : //172.25.22.218
+SVN Link :\\172.25.22.218\Softwares\UI
