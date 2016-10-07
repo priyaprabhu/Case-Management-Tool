@@ -14,7 +14,9 @@
 	
         <script src="../../js/script.js" ></script>
 		<script src="../../js/app.js" type="text/javascript"></script>
+    
 		<script src="../../js/formController.js" type="text/javascript"></script>	
+    
         <link rel="stylesheet" href="../../libraries/bootstrap.min.css" />
 	
         <link rel="stylesheet" href="../../css/custom.css" />
@@ -35,7 +37,7 @@
 <li><a href="#"><span class="glyphicon glyphicon-remove form-close"></span></a></li>
 </ul>
 </nav>
-		 <form>
+		 <form name="drfForm" >
          <div class="row form-content" class="col-sm-6" >
         <div class="section1" ng-controller="formcontroller"> 
 		<div class="col-sm-6">
@@ -50,9 +52,10 @@
                          </div>
                     </div>
 					<div class="row">
-                    <div class="col-sm-12 form-input-container">
+                    <div class="col-sm-12 form-input-container ng-class="{'has-error': drfForm.vin.$invalid && !myForm.name.$pristine}">
                          <p>VIN</p>
-                    <input type="text"  class="form-control" >
+                   <input type="text"  class="form-control" name="vin" ng-model="vin"  ng-change="change()" ng-minlength="1" maxlength="17" />
+                    <p ng-show=drfForm.vin.$invalid>please enter alpahanumeric values only</p>
                          </div>
                     </div>
                 <div class="row">
@@ -101,50 +104,62 @@
 					<div class="row">
                     <div class="col-sm-12 form-input-container">
                          <p>What are the symptoms</p>
-                    <select class="form-control" ng-disabled="{{inputdisabled}}" ></select>
+                    <input type="text"  class="form-control" ng-disabled="{{inputdisabled}}" />
                          </div>
                     </div>
                 <div class="row">
                     <div class="col-sm-12 form-input-container">
                           <p>What DTC(s) are Present</p>
-                                <input  type="text" class="form-control" ng-disabled="{{inputdisabled}}">
-                                    
+                               <input  type="text" class="form-control" name="dtc" id="dtc" ng-minlength="1" maxlength="20" ng-model="dtc"  ng-disabled="{{inputdisabled}}" />
+                               <p></p>   
                          </div>
                                     </div>
-				<div class="row">
+				        <div class="row">
                     <div class="col-sm-12 form-input-container">
                           <p>How would you describe the issue (Including all observations and conditions)?<span id="manditory">*</span></p>
-                                <textarea  type="text" class="form-control" ng-disabled="{{inputdisabled}}" rows="10"></textarea>
+                               <textarea  type="text" class="form-control" name="issue" id="issue" ng-minlength="10" maxlength="240"ng-model="issue" oninput="issueValidate()"  ng-disabled="{{inputdisabled}}" rows="10"></textarea>
+                               <p id="issueError"></p>
                               </div>
                     
                 </div>
-				<div class="row">
+				        <div class="row">
                               <div class="col-sm-12 form-input-container">
                                  <p>What tests have you performed? What were the results?</p>
                               </div>
                            </div>
 				
-				<div class="row split_input">
-                              <div class="col-sm-5"><p >Test</p>
-                              <input  class="form-control" type="text" ng-disabled="{{inputdisabled}}"/>
-							  </div>
-							  <div class="col-sm-5"><p >Result</p>
-                              <input  class="form-control" type="text" ng-disabled="{{inputdisabled}}"/>
-							  </div>
-                           </div>
 				
-				<div class="row split_input">
-                              <div class="col-sm-5">
+                          <div class="row split_input">
+                            <div class="col-sm-10">
+                              <div class="col-sm-6">
+                                <p >Test</p>
                               <input  class="form-control" type="text" ng-disabled="{{inputdisabled}}"/>
-							  </div>
-							  <div class="col-sm-5">
-                              <input  class="form-control" type="text" ng-disabled="{{inputdisabled}}"/>
-							  </div>
-							  <div class="col-sm-2"><span><a href="#" class="glyphicon glyphicon-plus plus-Icon addIcon"></a></span></div>
-                           </div>
-				</div>
-            </div><!-- End section 2-->
-			  <div class="section3">
+                              </div>
+                              <div class="col-sm-6">
+                                <p >Result</p>
+                                <input  class="form-control" type="text" ng-disabled="{{inputdisabled}}"/>
+                              </div>
+                            </div>
+                          </div>
+                        
+                          <div class="row split_input">
+                                <div class="col-sm-10"   ng-repeat="rowContent in rows" style="margin-bottom:1.3%;">      
+                                  <div class="col-sm-6">
+                                      <input  class="form-control" type="text" ng-disabled="{{inputdisabled}}"/>
+                                  </div>
+                                  <div class="col-sm-6">
+                                    <input class="form-control" type="text" ng-disabled="{{inputdisabled}}"/>
+                                  </div>          
+                                </div>
+                                <div class="col-sm-2" style="text-align:left; vertical-align:bottom; margin-top:1%;">
+                                  <span>
+                                    <a href="javascript:void(0);" ng-click="addRow()" class="glyphicon glyphicon-plus plus-Icon addIcon button"></a>
+                                  </span>
+                                </div>
+                                
+                                
+                          </div><!-- End section 2-->
+			                 <div class="section3">
                         <div class="col-sm-10">
                            <h3>What is your Contact Information?</h3>
                         </div>
@@ -158,11 +173,14 @@
                            <div class="row">
                               <div class="col-sm-6 section3_container">
                                  <p class="font">Shop, Site, or Company Name<span id="manditory">*</span></p>
-                                 <input  type="text" class="form-control" ng-disabled="{{inputdisabled}}" />
+                                <input  type="text" class="form-control" name="companyname" id="name" ng-minlength="4" maxlength="100" oninput="nameValidate()" ng-model="companyname"  ng-disabled="{{inputdisabled}}" />
+                                <p id="nameError"></p>
                               </div>
                               <div class="col-sm-6 section3_container">
                                  <p class="font">Shop phone number<span id="manditory">*</span></p>
-                                 <input  type="text" class="form-control" ng-disabled="{{inputdisabled}}" />
+                              
+                                      <input class="form-control input-phone"  placeholder="xxx- xxx-xxxx"  type='text' phone-input ng-model="phoneVal" ng-minlength="10" maxlength="13"    ng-disabled="{{inputdisabled}}" />                           
+                                
                               </div>
                            </div>
                            <div class="row form-input-container">
@@ -172,21 +190,27 @@
                            <div class="row">
                              <div  class="col-sm-6 section3_container">
                                 <p class="font">Contact Name<span id="manditory">*</span></p>
-                                <input  type="text" class="form-control" ng-disabled="{{inputdisabled}}" />
+                               <input  type="text" class="form-control" name="contact" ng-model="contact" id="contact" ng-minlength="2" maxlength="64" oninput="contactValidate()"  ng-disabled="{{inputdisabled}}" />
+                               <p id="contactError"></p>
                              </div>
                               <div class="col-sm-6 section3_container">
-                                 <p class="font">Primary Phone Number<span id="manditory">*</span></p>
-                                 <input  type="number" class="form-control" ng-disabled="{{inputdisabled}}" />
+                                <p class="font">Primary Phone Number<span id="manditory">*</span></p>
+                                  <input class="form-control input-phone"  placeholder="xxx- xxx-xxxx"  type='text' phone-input ng-model="primarynumber" ng-minlength="10" maxlength="13"   ng-disabled="{{inputdisabled}}" />
+                                    </div>  
+                                <p id="primaryError"></p>
                               </div>
                            </div>
                            <div class="row">
-                             <div class="col-sm-6 form-input-container">
+                             <div class="col-sm-6 form-input-container" >
                                 <p class="font">Email</p>
-                                <input  class="form-control" type="email" ng-disabled="{{inputdisabled}}" />
+                                <input  class="form-control" type="email" name="email" ng-model="email"  ng-minlength="4" maxlength="254"   ng-disabled="{{inputdisabled}}" required />
+                                 <span style="color:red" ng-show="drfForm.email.$dirty && drfForm.email.$invalid">
+                                 <span ng-show="drfForm.email.$error.required">Email is required.</span>
+                                  <span ng-show="drfForm.email.$error.email">Invalid email address.</span></span>
                              </div>
                              <div class="col-sm-6 form-input-container">
                                 <p class="font">Alternative Phone Number</p>
-                                <input  class="form-control" type="number" ng-disabled="{{inputdisabled}}" />
+                                 <input class="form-control input-phone"  placeholder="xxx- xxx-xxxx"  type='text' phone-input ng-model="alternatenumber" ng-minlength="10" maxlength="13"   ng-disabled="{{inputdisabled}}" />
                              </div>
                            </div>
                            <div class="row">
@@ -202,7 +226,7 @@
                           
                            
                      </div>
-                  </div><!-- End section 3-->
+                 <!-- End section 3-->
 				 
 			  
 		 </div>
