@@ -1,26 +1,112 @@
-allData.controller('formcontroller', function($scope){
+allData.controller('formcontroller', function($scope, $http){
 	$scope.inputdisabled=false;
 	$scope.distanceValue=["Miles","KiloMeters"];
-	$scope.vehicle;
+	$scope.vehicle="";
+	$scope.url="https://172.27.10.73:8443/ebrs/catalog/";
+	$scope.transmissionValues=[];
+	$scope.hvacValues=[];
+	$scope.odameterValues=[];
+	$scope.systemValues=[];
+	
+	$scope.dataControl=[];
+	
+	$scope.fetchData=function(){
+		
+		//Transmission
+		$http.get($scope.url+'transmissiontypes')
+        .then(function(response) {
+      	  $scope.loadResponse = response.data;
+      	  angular.forEach($scope.loadResponse, function(value){
+      		  $scope.transmissionValues.push({"Label":value.transmissionTypeRefLbl, "Value":value.transmissionTypeRefCd });
+      	  });
+   }, function(response) {
+  	 $scope.data = "Error in transmission types";
+   });
+		//HVAC
+		$http.get($scope.url+'hvactypes')
+        .then(function(response) {
+      	  $scope.loadResponse = response.data;
+      	  angular.forEach($scope.loadResponse, function(value){
+      		  $scope.hvacValues.push({"Label":value.hvacTypeLbl, "Value":value.hvacTypeRefCd });
+      	  });
+   }, function(response) {
+  	 $scope.data = "Error in HVAC";
+   });
+		
+		//Odameter Ranges
+		$http.get($scope.url+'odometerranges')
+        .then(function(response) {
+      	  $scope.loadResponse = response.data;
+      	  angular.forEach($scope.loadResponse, function(value){
+      		  $scope.odameterValues.push({"Label":value.odometerRangeRefLbl, "Value":value.odometerRangeRefCd });
+      	  });
+      	 
+   }, function(response) {
+  	 $scope.data = "Error in Odameter";
+   });
+		//Systems
+		$http.get("https://172.27.10.73:8443/ebrs/systems")
+        .then(function(response) {
+      	  $scope.loadResponse = response.data;
+      	  angular.forEach($scope.loadResponse, function(value){
+      		  $scope.systemValues.push({"Label":value.valueLbl, "Value":value.troubleSymptomId });
+      	  });
+      	 
+   }, function(response) {
+  	 $scope.data = "Error in Systems";
+   });
+	};
+/*	
+	
+	$scope.getOptions=function(value){
+		$scope.dataControl.push(value);
+		
+};*/
 
-  $scope.currencyVal;
+$scope.getSystem=function(value){
+	var systemValue=value.Value;
+	$scope.symptomValues=[];
+	var url="https://172.27.10.73:8443/ebrs/systems/"
+		$http.get(url+systemValue)
+        .then(function(response) {
+      	  $scope.loadResponse = response.data;
+      	$scope.symptomValues.push({"Label":$scope.loadResponse.valueLbl, "Value":$scope.loadResponse.troubleSymptomClassRefCd });
+      	$scope.symValues=$scope.symptomValues[0];
+      	}, function(response) {
+  	 $scope.data = "Something went wrong";
+   });
+};
+
+$scope.getNameforData=function(value){
+	var url="https://172.27.10.73:8443/ebrs/systems/customer/getInfoByCOMPNM?value=";
+	$http.get(url+value)
+    .then(function(response) {
+  	  $scope.loadResponse = response.data;
+  	  console.log($scope.loadResponse);
+  	}, function(response) {
+	 $scope.data = "Something went wrong";
+});
+};
+
+$scope.fetchData();
+
+//input validation
+
 $scope.change = function (){
     var Vin = $scope.vin;
-
     if(Vin){
         var alphaNumeric = Vin.replace(/[^a-zA-Z0-9]/g,'');
-        //var alphaNumeric = uname.replace('/[a-zA-Z0-9^ ]/g','');
-        
         if(alphaNumeric  !== Vin){
             $scope.vin= alphaNumeric;
         }
     }
-}
-
- 
+};
+	
+	//172.27.10.244 port:443 http://<<server path>>:<<server port>>/ebrs/customer/getInfoByCOMPNM?value=Test Company
+	
 });
 
-        
+
 
 allData.directive('phoneInput', function($filter, $browser) {
     return {
@@ -57,48 +143,7 @@ allData.directive('phoneInput', function($filter, $browser) {
             });
         }
 
-    };
+    }
 });
-allData.filter('tel', function () {
-    return function (tel) {
-        console.log(tel);
-        if (!tel) { return ''; }
 
-        var value = tel.toString().trim().replace(/^\+/, '');
-
-        if (value.match(/[^0-9]/)) {
-            return tel;
-        }
-
-        var country, city, number;
-
-        switch (value.length) {
-            case 1:
-            case 2:
-            case 3:
-                city = value;
-                break;
-
-            default:
-                city = value.slice(0, 3);
-                number = value.slice(3);
-        }
-
-        if(number){
-            if(number.length>3){
-                number = number.slice(0, 3) + '-' + number.slice(3,7);
-            }
-            else{
-                number = number;
-            }
-
-            return ( city + "-" + number).trim();
-        }
-        else{
-            return "" + city;
-        }
-
-    };
-
-});
 
